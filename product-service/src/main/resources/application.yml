@@ -1,5 +1,7 @@
-server:
-  port: 8081
-eureka:
-  register-with-eureka: true
-  fetch-registry: true
+spring:
+  application:
+    name: product-service
+  profiles:
+    active: dev
+  config:
+    import: configserver:http://localhost:8787
