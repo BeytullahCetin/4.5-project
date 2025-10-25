@@ -221,6 +221,13 @@ public class Product {
             }
         }
 
+        public static ProductId fromUUID(UUID uuid) {
+            if (uuid == null) {
+                throw new IllegalArgumentException("UUID null olamaz");
+            }
+            return new ProductId(uuid);
+        }
+
         public UUID getValue() {
             return value;
         }
