@@ -9,7 +9,17 @@ spring:
     driver-class-name: org.postgresql.Driver
     username: postgres
     password: prodcutservice_db_password
-
+  kafka:
+    bootstrap-servers: localhost:9094
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: localhost:9094
+      bindings:
+        orderCreated-in-0:
+          destination: order-topic
+          group: product-service
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
